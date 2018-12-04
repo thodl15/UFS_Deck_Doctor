@@ -1,0 +1,33 @@
+{
+  "name": "ufs_deck_doctor",
+  "version": "0.1.0",
+  "description": "A web-based application for analyzing UFS decks",
+  "main": "index.js",
+  "dependencies": {
+    "flatted": "^2.0.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-scripts": "^2.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thodl15/UFS_Deck_Doctor.git"
+  },
+  "keywords": [
+    "UFS",
+    "React"
+  ],
+  "author": "David Thomas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/thodl15/UFS_Deck_Doctor/issues"
+  },
+  "homepage": "https://github.com/thodl15/UFS_Deck_Doctor#readme"
+}
