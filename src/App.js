@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import DeckInputPres from './components/DeckInputPres';
 
-
 class App extends Component {
     render() {
         return (
