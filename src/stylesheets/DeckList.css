@@ -1,0 +1,52 @@
+.cardEntryContainer {
+    border: 1px solid black;
+    border-bottom: 0px;
+    max-width: 50%;
+    overflow-x: hidden;
+    background-color: rgb(219, 253, 255);
+}
+
+.cardNameContainer:hover {
+    cursor: pointer;
+}
+
+.cardCounterContainer {
+    font-size: 1.1em;
+    display: inline-block;
+    border-right: 1px solid black;
+    padding: 5px;
+}
+
+.cardCounterButton {
+    width: 20px;
+    text-align: center;
+    display: inline-block;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: lightblue;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.cardCounterButton:hover {
+    background-color: rgb(140, 174, 185);
+    cursor: pointer;
+}
+
+.cardNameContainer {
+    display: inline-block;
+    padding: 5px;
+}
+
+.decklistContainer {
+    margin-top: 15px;
+}
+
+.decklistContainer>.cardEntryContainer:first-child {
+    border-top-right-radius: 5px;
+}
+
+.decklistContainer>.cardEntryContainer:last-child {
+    border-bottom: 1px solid black;
+    border-bottom-right-radius: 5px;
+}
