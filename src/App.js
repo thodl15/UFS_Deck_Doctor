@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 
-import DeckInputPres from './components/DeckInputPres';
+import DeckInputCont from './components/DeckInputCont';
+import DeckListCont from './components/DeckListCont';
 
 class App extends Component {
     render() {
         return (
             <div id={"app"}>
-                <DeckInputPres/>
+                <DeckInputCont />
+                <div>
+                    <DeckListCont />
+                </div>
             </div>
         )
     }
