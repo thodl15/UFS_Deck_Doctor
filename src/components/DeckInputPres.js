@@ -15,6 +15,7 @@ const DeckInputPres = (props) => (
             // and have a space
             var cardInputRegex = /^\d{1}\s{1}/;
             var cardOutputArr = [];
+            var idVal = 0;
             splitInput.forEach(e => {
                 if(cardInputRegex.test(e)) {
                     console.log("Card Input:");
@@ -22,6 +23,7 @@ const DeckInputPres = (props) => (
                     var count, name;
                     [count, ...name] = e.split(" ");
                     cardOutputArr.push({
+                        id: idVal++,
                         count,
                         name: name.join(" ")
                     });
@@ -29,14 +31,15 @@ const DeckInputPres = (props) => (
             })
 
             console.log(cardOutputArr);
+            props.updateDecklist(cardOutputArr);
             
 
             var input = document.getElementById("initialDecklist");
             console.log(input);
-            input.style = [
-                "height:0px;",
-                "background-color:black;"
-            ].join("");
+            // input.style = [
+            //     "height:0px;",
+            //     "background-color:black;"
+            // ].join("");
         }}
     >
         {formProps => {

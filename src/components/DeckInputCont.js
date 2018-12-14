@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { connect } from 'react-redux';
 import { updateDecklist } from '../reducers/actions';
 
@@ -8,10 +10,10 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    updateDecklist: () => dispatch(updateDecklist())
+    updateDecklist: (deck) => dispatch(updateDecklist(deck))
 })
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)
+)(DeckInputPres);
