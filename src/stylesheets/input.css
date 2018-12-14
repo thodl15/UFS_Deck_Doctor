@@ -7,7 +7,7 @@ form {
 }
 
 .deckInput {
-    height: 500px;
+    height: auto;
     /* transition: height 2s; */
 }
 
