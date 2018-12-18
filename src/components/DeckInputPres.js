@@ -8,7 +8,6 @@ const DeckInputPres = (props) => (
         initialValues = {{ decklist: "" }}
         onSubmit = {(values, actions) => {
             var splitInput = values.decklist.split("\n").map(x => x.trim());
-            console.log(splitInput);
 
             // Regex Pattern:
             // Match lines that start with a number
@@ -18,24 +17,20 @@ const DeckInputPres = (props) => (
             var idVal = 0;
             splitInput.forEach(e => {
                 if(cardInputRegex.test(e)) {
-                    console.log("Card Input:");
-                    console.log(e);
                     var count, name;
                     [count, ...name] = e.split(" ");
                     cardOutputArr.push({
                         id: idVal++,
-                        count,
+                        count: parseInt(count),
                         name: name.join(" ")
                     });
                 }
             })
 
-            console.log(cardOutputArr);
             props.updateDecklist(cardOutputArr);
             
 
-            var input = document.getElementById("initialDecklist");
-            console.log(input);
+            // var input = document.getElementById("initialDecklist");
             // input.style = [
             //     "height:0px;",
             //     "background-color:black;"
