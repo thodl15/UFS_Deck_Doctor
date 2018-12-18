@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import DeckInputCont from './components/DeckInputCont';
 import DeckListCont from './components/DeckListCont';
+import DeckStatsPres from './components/DeckStatsPres';
 
 class App extends Component {
     render() {
@@ -10,6 +11,7 @@ class App extends Component {
                 <DeckInputCont />
                 <div>
                     <DeckListCont />
+                    <DeckStatsPres />
                 </div>
             </div>
         )
