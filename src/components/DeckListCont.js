@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import DeckListPres from './DeckListPres';
-import CardEntryPres from './CardEntryPres';
+import CardEntryCont from './CardEntryCont';
 
 const mapStateToProps = state => ({
     deck: createCardEntries(state.deck)
@@ -13,11 +13,11 @@ const mapDispatchToProps = dispatch => ({
 
 })
 
-function createCardEntries(deck) {
+function createCardEntries(deck, funcs) {
     var outputArray = [];
     deck.forEach(x => {
         outputArray.push(
-            <CardEntryPres
+            <CardEntryCont
                 key = {x.id}
                 card = {x}
             />
