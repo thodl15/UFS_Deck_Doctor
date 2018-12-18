@@ -1,7 +1,7 @@
 .cardEntryContainer {
     border: 1px solid black;
     border-bottom: 0px;
-    max-width: 50%;
+    max-width: 20em;
     overflow-x: hidden;
     background-color: rgb(219, 253, 255);
 }
