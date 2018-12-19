@@ -4,7 +4,8 @@ import '../stylesheets/DeckStats.css';
 
 const DeckStatsPres = ({deck, getStats}) => (
     <div className={"DeckStatsContainer"}>
-        Deck Stats Here
+        {"Deck Stats Here"}
+        <br/>
         {getStats(deck)}
     </div>
 )
