@@ -1,0 +1,114 @@
+{
+  "cards" : {
+    "Act of Treason" : {
+      "name": "Act of Treason",
+      "set": "RH03",
+      "setId": "147"
+    },
+    "Ageless and Wise" : {
+      "name": "Ageless and Wise",
+      "set": "MKX01",
+      "setId": "123"
+    },
+    "Balanced Fighter" : {
+      "name": "Balanced Fighter",
+      "set": "MM02",
+      "setId": "132"
+    },
+    "Celestial Being" : {
+      "name": "Celestial Being",
+      "set": "RH03",
+      "setId": "149"
+    },
+    "Designed for Combat" : {
+      "name": "Designed for Combat",
+      "set": "MM02",
+      "setId": "133"
+    },
+    "Dita del Lamento" : {
+      "name": "Dita del Lamento",
+      "set": "SFvDS01",
+      "setId": "29"
+    },
+    "Dreaming of Becoming Whole" : {
+      "name": "Dreaming of Becoming Whole",
+      "set": "SFvDS01",
+      "setId": "52"
+    },
+    "Explosive Acrobatics" : {
+      "name": "Explosive Acrobatics",
+      "set": "CB01",
+      "setId": "69"
+    },
+    "Falce Inizio" : {
+      "name": "Falce Inizio",
+      "set": "SFvDS01",
+      "setId": "30"
+    },
+    "Far Worse Places Than Hell" : {
+      "name": "Far Worse Places Than Hell",
+      "set": "SFvDS01",
+      "setId": "33"
+    },
+    "Formidable Task" : {
+      "name": "Formidable Task",
+      "set": "RH03",
+      "setId": "114"
+    },
+    "Ganymede Terrorists" : {
+      "name": "Ganymede Terrorists",
+      "set": "CB01",
+      "setId": "111"
+    },
+    "His Gift of Immortal Blood" : {
+      "name": "His Gift of Immortal Blood",
+      "set": "SFvDS01",
+      "setId": "34"
+    },
+    "My Beautiful Child" : {
+      "name": "My Beautiful Child",
+      "set": "SFvDS01",
+      "setId": "35"
+    },
+    "Nothing Like Andy" : {
+      "name": "Nothing Like Andy",
+      "set": "CB01",
+      "setId": "86"
+    },
+    "Sangue Sacrificale" : {
+      "name": "Sangue Sacrificale",
+      "set": "SFvDS01",
+      "setId": "31"
+    },
+    "Spider Suplex" : {
+      "name": "Spider Suplex",
+      "set": "RH03",
+      "setId": "143"
+    },
+    "Spirale Divina" : {
+      "name": "Spirale Divina",
+      "set": "SFvDS01",
+      "setId": "32"
+    },
+    "Syndicate Target" : {
+      "name": "Syndicate Target",
+      "set": "CB01",
+      "setId": "90"
+    },
+    "Unmet Demands" : {
+      "name": "Unmet Demands",
+      "set": "CB01",
+      "setId": "117"
+    },
+    "Virus Unchained" : {
+      "name": "Virus Unchained",
+      "set": "CB01",
+      "setId": "113"
+    },
+    "··Jedah··" : {
+      "name": "··Jedah··",
+      "set": "SFvDS01",
+      "setId": "28"
+    }
+  }
+}
