@@ -14,20 +14,35 @@ const DeckInputPres = (props) => (
             // and have a space
             var cardInputRegex = /^\d{1}\s{1}/;
             var cardOutputArr = [];
-            var idVal = 0;
             splitInput.forEach(e => {
                 if(cardInputRegex.test(e)) {
                     var count, name;
                     [count, ...name] = e.split(" ");
                     cardOutputArr.push({
-                        id: idVal++,
                         count: parseInt(count),
                         name: name.join(" ")
                     });
                 }
             })
 
-            props.updateDecklist(cardOutputArr);
+            // props.updateDecklist(cardOutputArr);
+
+            // Get the data of cards using the API
+            // in order to determine the current
+            // deck statistics.
+            let nameArr = cardOutputArr.map(x => x.name);
+            fetch(`http://localhost:4000/cards?names=${nameArr.join(',')}`, {
+                method: "GET"
+            }).then(response => 
+                response.json()
+            ).then(data => {
+                let updatedArr = cardOutputArr.map(x => 
+                    data[x.name] !== undefined ? 
+                        ({...x, id: `${data[x.name].set}-${data[x.name].setId}`}) :
+                        (x)
+                )
+                props.updateDecklist(updatedArr);
+            })
             
 
             // var input = document.getElementById("initialDecklist");
