@@ -5,14 +5,14 @@ import '../stylesheets/DeckList.css';
 const CardEntryPres = ({ card, decCardCount, incCardCount }) => (
     <div className={"cardEntryContainer"}>
         <div className={"cardCounterContainer"}>
-            <div id={`${card.id}-inc`} 
+            <div id={`${card.id}_inc`} 
                 className={"cardCounterButton"} 
-                onClick={e => decCardCount(parseInt(e.target.id.split('-')[0]))}
+                onClick={e => decCardCount(e.target.id.split('_')[0])}
             > - </div>
             {`${card.count}`}
-            <div id={`${card.id}-inc`}
+            <div id={`${card.id}_inc`}
                 className={"cardCounterButton"}
-                onClick={e => incCardCount(parseInt(e.target.id.split('-')[0]))}
+                onClick={e => incCardCount(e.target.id.split('_')[0])}
             > + </div>
         </div>
         <div className={"cardNameContainer"}>
