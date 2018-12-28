@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+
+
+# Additional files designed by contributors:
+src/backend/dev/local_data/*.json
