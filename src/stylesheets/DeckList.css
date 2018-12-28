@@ -1,20 +1,50 @@
+.decklistHeader {
+    background-color: rgb(205, 235, 236);
+    font-size: 1.6em;
+    font-weight: bold;
+    padding: 7px;
+    text-align: center;
+
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
 .cardEntryContainer {
-    border: 1px solid black;
     border-bottom: 0px;
-    max-width: 20em;
     overflow-x: hidden;
     background-color: rgb(219, 253, 255);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.cardEntryContainer>.cardNameContainer:hover {
+    background-color: rgb(219, 253, 255); 
+    text-overflow: inherit;
+    overflow-x: visible;
+    white-space: normal;
+}
+
+
+.cardNameContainer {
+    display: inline-block;
+    padding: 6px 15px;
+    font-size: 1.2em;
+    width: 60%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: middle;
 }
 
 .cardNameContainer:hover {
     cursor: pointer;
+    overflow-x: visible;
 }
 
 .cardCounterContainer {
     font-size: 1.1em;
     display: inline-block;
-    border-right: 1px solid black;
     padding: 5px;
+    margin: auto;
 }
 
 .cardCounterButton {
@@ -24,7 +54,6 @@
     margin-left: 5px;
     margin-right: 5px;
     background-color: lightblue;
-    border: 1px solid black;
     border-radius: 50%;
 }
 
@@ -33,20 +62,31 @@
     cursor: pointer;
 }
 
-.cardNameContainer {
-    display: inline-block;
-    padding: 5px;
-}
+
 
 .decklistContainer {
-    display: inline-block;
+    box-shadow: 1px 4px 6px 0 hsla(0, 0%, 0%, 0.3);
+    border-radius: 10px;
+    margin-right: 10px;
+    width: 100%;
 }
 
 .decklistContainer>.cardEntryContainer:first-child {
-    border-top-right-radius: 5px;
+    border-top-right-radius: 10px;
 }
 
 .decklistContainer>.cardEntryContainer:last-child {
-    border-bottom: 1px solid black;
-    border-bottom-right-radius: 5px;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+}
+
+.decklistContainerWrapper {
+    display: inline-block;
+    min-width: 20%;
+    max-width: 50%;
+}
+
+.decklistFooter {
+    background-color: rgb(205, 235, 236);
+    padding: 15px;
 }

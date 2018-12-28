@@ -4,17 +4,15 @@ form {
     display: flex;
     flex-direction: column;
     width: 50%;
+    max-width: 500px;
 }
 
 .deckInput {
     height: auto;
-    /* transition: height 2s; */
 }
 
 .deckInput>textarea {
-    /* resize: vertical; */
     resize: none;
-    /* min-height: 8em; */
 }
 
 .deckInput>button {
