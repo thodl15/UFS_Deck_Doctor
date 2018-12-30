@@ -63,4 +63,4 @@ typings/
 
 
 # Additional files designed by contributors:
-src/backend/dev/local_data/*.json
+backend/*
