@@ -13,24 +13,23 @@ const DeckInputPres = (props) => (
             // Match lines that start with a number
             // and have a space
             var cardInputRegex = /^\d{1}\s{1}/;
-            var cardOutputArr = [];
+            var cardOutputArr = {};
             splitInput.forEach(e => {
                 if(cardInputRegex.test(e)) {
                     var count, name;
                     [count, ...name] = e.split(" ");
-                    cardOutputArr.push({
+                    name = name.join(" ");
+                    cardOutputArr[name] = {
                         count: parseInt(count),
-                        name: name.join(" ")
-                    });
+                        name
+                    };
                 }
-            })
-
-            // props.updateDecklist(cardOutputArr);
+            });
 
             // Get the data of cards using the API
             // in order to determine the current
             // deck statistics.
-            let nameArr = cardOutputArr.map(x => x.name);
+            let nameArr = Object.keys(cardOutputArr).map(x => cardOutputArr[x].name);
 
             // Temporarily changing the API endpoint that I am hitting
             // to utilize the generic return until I properly build
@@ -43,12 +42,18 @@ const DeckInputPres = (props) => (
             }).then(response => 
                 response.json()
             ).then(data => {
-                console.log(data);
-                let updatedArr = cardOutputArr.map(x => 
-                    data[x.name] !== undefined ? 
-                        ({...x, id: `${data[x.name].set}-${data[x.name].setId}`}) :
-                        (x)
-                )
+
+                // We know that the list of objects returned from the server
+                // **must** be a subset of the requested cards, so we do not have
+                // to do a verification of the existence of a given card name
+                // in the original dictionary used to generate the request.
+                let updatedArr = data.sort(x => x.name).map(x => {
+                    return ({
+                        ...x, 
+                        id: `${x.set}-${x.setId}`,
+                        count: cardOutputArr[x.name].count
+                    })
+                })
                 props.updateDecklist(updatedArr);
             })
             
