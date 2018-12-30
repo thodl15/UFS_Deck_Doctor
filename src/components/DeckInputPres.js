@@ -31,10 +31,45 @@ const DeckInputPres = (props) => (
             // deck statistics.
             let nameArr = Object.keys(cardOutputArr).map(x => cardOutputArr[x].name);
 
+            // ---- NEW TODO ---- 
+            //      (David)
+            // Use the nameArr variable to generate the list of IDs for the
+            // API request for more detailed card data.
+
+            // Steps:
+            // 1. Match names against dictionary
+            // 2. Build decklist query
+
+            console.log(props.cardKeyDict);
+
+            var decklistQueryObj = {};
+            nameArr.forEach( name => {
+                var cardData = props.cardKeyDict[name];
+                if(decklistQueryObj[cardData.set]) {
+                    decklistQueryObj[cardData.set].push(cardData.setId);
+                } else {
+                    decklistQueryObj[cardData.set] = [cardData.setId];
+                }
+            });
+
+            var decklistQueryString = "";
+            
+            Object.keys(decklistQueryObj).forEach( setName => {
+                let setString = `${setName}:`;
+                decklistQueryObj[setName].forEach( cardID => {
+                    setString += `${cardID},`;
+                })
+                decklistQueryString += `${setString.substring(0,setString.length-1)};`;
+            });
+            console.log(decklistQueryString);
+            // ---- END TODO ----
+
+
+
             // Temporarily changing the API endpoint that I am hitting
             // to utilize the generic return until I properly build
             // out the query-based endpoint.
-            var finalEndpoint = `http://localhost:4000/cards?names=${nameArr.join(',')}`;
+            var finalEndpoint = `http://localhost:8080/api/Cards?deckstring=${decklistQueryString}`;
             var tempEndpoint = `http://localhost:8080/api/Cards`;
 
             fetch(tempEndpoint, {
@@ -47,11 +82,11 @@ const DeckInputPres = (props) => (
                 // **must** be a subset of the requested cards, so we do not have
                 // to do a verification of the existence of a given card name
                 // in the original dictionary used to generate the request.
-                let updatedArr = data.sort(x => x.name).map(x => {
+                let updatedArr = Object.keys(data).sort().map(x => {
                     return ({
-                        ...x, 
-                        id: `${x.set}-${x.setId}`,
-                        count: cardOutputArr[x.name].count
+                        ...data[x], 
+                        id: `${data[x].set}-${data[x].setId}`,
+                        count: cardOutputArr[x].count
                     })
                 })
                 props.updateDecklist(updatedArr);
