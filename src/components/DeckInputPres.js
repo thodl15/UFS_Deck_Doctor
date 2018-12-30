@@ -61,6 +61,12 @@ const DeckInputPres = (props) => (
                 })
                 decklistQueryString += `${setString.substring(0,setString.length-1)};`;
             });
+
+            // Hotfix for dealing with an empty entry being created
+            // on the set delineation with the extra delimiter
+            // appearing at the end of the last set string.
+            decklistQueryString = decklistQueryString.substring(0, decklistQueryString.length - 1)
+            
             console.log(decklistQueryString);
             // ---- END TODO ----
 
