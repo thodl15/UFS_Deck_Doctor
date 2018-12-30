@@ -8,7 +8,8 @@ import { updateDecklist,
 import DeckInputPres from './DeckInputPres';
 
 const mapStateToProps = state => ({
-    deck: state.decklist
+    deck: state.deck,
+    cardKeyDict: state.cardIDs
 })
 
 const mapDispatchToProps = dispatch => ({
