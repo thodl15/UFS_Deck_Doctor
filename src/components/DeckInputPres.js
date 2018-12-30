@@ -31,11 +31,19 @@ const DeckInputPres = (props) => (
             // in order to determine the current
             // deck statistics.
             let nameArr = cardOutputArr.map(x => x.name);
-            fetch(`http://localhost:4000/cards?names=${nameArr.join(',')}`, {
+
+            // Temporarily changing the API endpoint that I am hitting
+            // to utilize the generic return until I properly build
+            // out the query-based endpoint.
+            var finalEndpoint = `http://localhost:4000/cards?names=${nameArr.join(',')}`;
+            var tempEndpoint = `http://localhost:8080/api/Cards`;
+
+            fetch(tempEndpoint, {
                 method: "GET"
             }).then(response => 
                 response.json()
             ).then(data => {
+                console.log(data);
                 let updatedArr = cardOutputArr.map(x => 
                     data[x.name] !== undefined ? 
                         ({...x, id: `${data[x.name].set}-${data[x.name].setId}`}) :
