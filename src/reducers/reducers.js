@@ -1,8 +1,18 @@
 import { combineReducers } from 'redux';
 
-import { UPDATE_DECKLIST,
+import { SET_CARD_DICTIONARY,
+         UPDATE_DECKLIST,
          INC_CARD_COUNT,
          DEC_CARD_COUNT } from './actions';
+
+function cardIDs(state = [], action) {
+    switch(action.type) {
+        case SET_CARD_DICTIONARY:
+            return action.dict
+        default:   
+            return state
+    }
+}
 
 function deck(state = [], action) {
     switch (action.type) {
@@ -22,6 +32,7 @@ function deck(state = [], action) {
 }
 
 const deckActions = combineReducers({
+    cardIDs,
     deck
 });
 
