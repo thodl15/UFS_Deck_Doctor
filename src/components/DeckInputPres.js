@@ -78,7 +78,7 @@ const DeckInputPres = (props) => (
             var finalEndpoint = `http://localhost:8080/api/Cards?deckstring=${decklistQueryString}`;
             var tempEndpoint = `http://localhost:8080/api/Cards`;
 
-            fetch(tempEndpoint, {
+            fetch(finalEndpoint, {
                 method: "GET"
             }).then(response => 
                 response.json()
@@ -94,7 +94,7 @@ const DeckInputPres = (props) => (
                         id: `${data[x].set}-${data[x].setId}`,
                         count: cardOutputArr[x].count
                     })
-                })
+                });
                 props.updateDecklist(updatedArr);
             })
             
