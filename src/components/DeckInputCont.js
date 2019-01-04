@@ -18,8 +18,8 @@ const mapDispatchToProps = dispatch => ({
 })
 
 class DeckInputCont extends React.Component {
-    constructor(props, state) {
-        super(props, state);
+    constructor(props) {
+        super(props);
     }
     
     componentDidMount() {
