@@ -69,7 +69,7 @@ class BlockZoneChart extends React.Component {
         var highBlocks, midBlocks, lowBlocks, noBlocks;
 
         this.props.deck.forEach(card => {
-            zoneCountArray[blockZones.indexOf(card.block_zone)] += card.count;
+            zoneCountArray[blockZones.indexOf(card.block_zone)] += card.modCount;
         });
 
         [highBlocks,
@@ -77,7 +77,7 @@ class BlockZoneChart extends React.Component {
          lowBlocks,
          noBlocks] = zoneCountArray;
         
-        var deckSize = this.props.deck.reduce((total, card) => parseInt(total) + parseInt(card.count), 0);
+        var deckSize = this.props.deck.reduce((total, card) => parseInt(total) + parseInt(card.modCount), 0);
 
         const highBlockData = generateBlockZoneData('High Blocks', highBlocks, deckSize);
         const midBlockData  = generateBlockZoneData('Mid Blocks', midBlocks, deckSize);

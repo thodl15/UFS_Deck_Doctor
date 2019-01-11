@@ -52,9 +52,9 @@ class SpamFoundationChart extends React.Component {
     calculateData() {
         if(this.props.deck.length === 0) {return 0}
         
-        var spamFoundations = this.props.deck.map(x => parseInt(x.diff) <= spamDifficulty ? x.count : 0);
+        var spamFoundations = this.props.deck.map(x => parseInt(x.diff) <= spamDifficulty ? x.modCount : 0);
         var spamCount = spamFoundations.reduce((total, num) => total + num);
-        var deckSize = this.props.deck.reduce((total, card) => parseInt(total) + parseInt(card.count), 0);
+        var deckSize = this.props.deck.reduce((total, card) => parseInt(total) + parseInt(card.modCount), 0);
 
         const spamData = {
             name: 'Spam',

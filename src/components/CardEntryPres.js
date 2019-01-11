@@ -9,7 +9,7 @@ const CardEntryPres = ({ card, decCardCount, incCardCount }) => (
                 className={"cardCounterButton"} 
                 onClick={e => decCardCount(e.target.id.split('_')[0])}
             > - </div>
-            {`${card.count}`}
+            {`${card.modCount}`}
             <div id={`${card.id}_inc`}
                 className={"cardCounterButton"}
                 onClick={e => incCardCount(e.target.id.split('_')[0])}
