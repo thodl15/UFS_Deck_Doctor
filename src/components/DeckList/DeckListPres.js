@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../stylesheets/DeckList.css';
+import 'stylesheets/DeckList.css';
 
 const DeckListPres = (props) => (
     <div className={"decklistContainerWrapper"}>

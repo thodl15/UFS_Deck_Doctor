@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import DeckListPres from './DeckListPres';
-import CardEntryCont from './CardEntryCont';
+import CardEntryCont from 'components/CardEntry/CardEntryCont';
 
 const mapStateToProps = state => ({
     deck: createCardEntries(state.deck)

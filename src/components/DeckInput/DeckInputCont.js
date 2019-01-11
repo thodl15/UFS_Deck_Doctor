@@ -3,7 +3,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { updateDecklist,
-         setCardDictionary } from '../reducers/actions';
+         setCardDictionary } from 'reducers/actions';
 
 import DeckInputPres from './DeckInputPres';
 

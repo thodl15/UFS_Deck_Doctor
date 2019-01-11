@@ -1,8 +1,8 @@
 import React from 'react';
-import SpamFoundationChart from './charts/SpamFoundationChart/ChartCont';
-import BlockZoneChart from './charts/BlockZoneChart/ChartCont';
+import SpamFoundationChart from 'components/charts/SpamFoundationChart/ChartCont';
+import BlockZoneChart from 'components/charts/BlockZoneChart/ChartCont';
 
-import '../stylesheets/DeckStats.css';
+import 'stylesheets/DeckStats.css';
 
 const DeckStatsPres = ({deck, getStats}) => (
     <div className={"DeckStatsContainer"}>

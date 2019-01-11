@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import DeckInputCont from './components/DeckInputCont';
-import DeckListCont from './components/DeckListCont';
-import DeckStatsCont from './components/DeckStatsCont';
+import DeckInputCont from 'components/DeckInput/DeckInputCont';
+import DeckListCont from 'components/DeckList/DeckListCont';
+import DeckStatsCont from 'components/DeckStats/DeckStatsCont';
 
 import './stylesheets/App.css';
 

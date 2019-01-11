@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { incrementCardCount,
-         decrementCardCount } from '../reducers/actions';
+         decrementCardCount } from 'reducers/actions';
 
 import CardEntryPres from './CardEntryPres';
 
