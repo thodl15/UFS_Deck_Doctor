@@ -2,5 +2,6 @@
     float: right;
     border: 1px solid black;
     width: 20em;
+    max-width: 50em;
     text-align: center;
 }
