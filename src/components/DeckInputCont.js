@@ -18,9 +18,6 @@ const mapDispatchToProps = dispatch => ({
 })
 
 class DeckInputCont extends React.Component {
-    constructor(props) {
-        super(props);
-    }
     
     componentDidMount() {
         fetch('http://localhost:8080/api/Cards?getMinimal=true', {

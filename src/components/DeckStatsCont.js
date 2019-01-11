@@ -17,7 +17,6 @@ const mapDispatchToProps = dispatch => ({
 })
 
 const generateDeckStats = deck => {
-    var blockZones = [];
     var spamFoundations = deck.map(x => parseInt(x.diff) < 2 ? x.count : 0);
     
     if(deck.length > 0) {

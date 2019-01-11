@@ -76,8 +76,7 @@ const DeckInputPres = (props) => (
             // to utilize the generic return until I properly build
             // out the query-based endpoint.
             var finalEndpoint = `http://localhost:8080/api/Cards?deckstring=${decklistQueryString}`;
-            var tempEndpoint = `http://localhost:8080/api/Cards`;
-
+            
             fetch(finalEndpoint, {
                 method: "GET"
             }).then(response => 
@@ -92,7 +91,8 @@ const DeckInputPres = (props) => (
                     return ({
                         ...data[x], 
                         id: `${data[x].set}-${data[x].setId}`,
-                        count: cardOutputArr[x].count
+                        count: cardOutputArr[x].count,
+                        modCount: cardOutputArr[x].count
                     })
                 });
                 props.updateDecklist(updatedArr);
