@@ -64,3 +64,7 @@ typings/
 
 # Additional files designed by contributors:
 backend/*
+
+# Folder for storing local notes & documents
+# on anything that involves the project.
+dev_docs/
